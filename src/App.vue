@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Header :currency="getBase" :value="getValue"/>
-    <Contents :currency="getBase" :value="getValue"/>
+    <Header/>
+    <Contents :items="getItems"/>
     <Footer/>
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
@@ -17,6 +17,11 @@ import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'app',
+  data() {
+    return {
+      
+    }
+  },
   components: {
     // HelloWorld,
     Header,
@@ -28,6 +33,7 @@ export default {
       'getValue',
       'getRates',
       'getBase',
+      'getItems'
       // ...
     ])
   },

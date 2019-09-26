@@ -1,25 +1,32 @@
 <template>
     <div class="container">
-        <div class="box row">
+        <div v-for="(item,i) in getItems" :key="i" class="box row">
             <div class="col-10">
                 <div>
-                    {{ currency | uppercase }} {{ value }}
+                    {{ item.name }} {{ item.result }}
                 </div>
-                <div><b><i>USD - Unites States Dollars</i></b></div>
-                <div>1 USD = {{ value }}</div>
+                <div><b><i>{{ item.name }}</i></b></div>
+                <div>1 USD = {{ item.value }}</div>
             </div>
             <div class="col-2 btn-act">
-                <button>(-)</button>
+                <button @click="removeItem(i)">(-)</button>
             </div>
         </div>
     </div>
 </template>
 <script>
+import { mapActions, mapGetters } from 'vuex';
 export default {
     name: 'Contents',
-    props: {
-        currency: String,
-        value: Number
+    computed: {
+        ...mapGetters([
+            'getItems'
+        ])
+    },
+    methods: {
+        ...mapActions([
+            'removeItem'
+        ])
     }
 }
 </script>

@@ -1,24 +1,47 @@
 <template>
     <div class="container">
-        <div class="btn-add row">
-            <button style="border-right: 0;">(+) Add More Currencies</button>
+        <div class="btn-add row" v-if="isEdited == false">
+            <button style="border-right: 0;" @click="isEdited = !isEdited">(+) Add More Currencies</button>
         </div>
-        <br>
-        <div class="box row">
+        <div class="box row" v-else>
             <div class="col-9 input-c">
-                <input type="text">
+                <input type="text" v-model="inputData">
             </div>
             <div class="col-3 btn-act">
-                <button>Submit</button>
+                <button type="submit" @click="submitFunction()">Submit</button>
             </div>
         </div>
     </div>
 </template>
 <script>
+import { mapActions, mapGetters } from 'vuex';
 export default {
     name: 'Footer',
-    props: {
-        
+    data() {
+        return {
+            inputData: '',
+            isEdited: false
+        }
+    },
+    computed: {
+        ...mapGetters([
+            'getRates', 
+            'getValue'
+        ])
+    },
+    methods: {
+        ...mapActions([
+            'addItem'
+        ]),
+        findRates(name) {
+            let item = Object.keys(this.getRates).filter(( x ) => x == name)
+            return this.getRates[item]
+        },
+        submitFunction() {
+            this.isEdited = !this.isEdited
+            this.addItem({ name: this.inputData, value: this.findRates(this.inputData), result: 0 })
+            this.inputData = ''
+        }
     }
 }
 </script>
