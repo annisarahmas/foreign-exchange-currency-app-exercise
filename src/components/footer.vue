@@ -46,7 +46,7 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="scss" scoped>
     .container{
         padding-top: 0 !important;
     }
