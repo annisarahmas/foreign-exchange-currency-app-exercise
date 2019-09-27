@@ -47,6 +47,7 @@ export default {
     
     .container{
       padding: 20px;
+      max-width: 576px;
     }
     .box{
       border: 1px solid #333;

@@ -41,6 +41,7 @@ export default {
         font-weight: bold !important;
     }
     .container{
+        padding: 10px !important;
         border-bottom: 1px solid #333;
     }
 </style>
