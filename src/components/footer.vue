@@ -52,6 +52,8 @@ export default {
     }
     .btn-add{
         border: 1px solid #333;
+        border-radius: 8px;
+        overflow: hidden;
     }
     button{
         height: 34px !important;

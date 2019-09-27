@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div v-for="(item,i) in getItems" :key="i" class="box row">
-            <div class="col-10">
+            <div class="col-10" style="padding-top: 10px;padding-bottom: 10px;">
                 <div>
                     {{ item.name }} {{ item.result }}
                 </div>
@@ -32,5 +32,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    
+    .container{
+        padding: 20px 20px 0 20px !important;
+    }
 </style>

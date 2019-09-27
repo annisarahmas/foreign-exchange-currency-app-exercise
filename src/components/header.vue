@@ -1,9 +1,11 @@
 <template>
     <div class="container">
         <div class="row head-title">USD - Unites States Dollars</div>
-        <div class="row" style="font-weight: bold;">
-            <div class="col-6 text-left">{{ getBase }}</div>
-            <div class="col-6 text-right"><input type="text" v-model="value"></div>
+        <div class="row align-items-center" style="font-weight: bold;">
+            <div class="col-6">{{ getBase }}</div>
+            <div class="col-6">
+                <input type="text" v-model="value">
+            </div>
         </div>
     </div>
 </template>
@@ -29,6 +31,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    .head-title{
+      padding-right: 15px;
+      padding-left: 15px;
+      font-style: italic;
+      font-size: 14px;
+    }
+    input{
+        font-weight: bold !important;
+    }
     .container{
         border-bottom: 1px solid #333;
     }

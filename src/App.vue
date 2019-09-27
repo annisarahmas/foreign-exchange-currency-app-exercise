@@ -46,16 +46,13 @@ export default {
     color: #2c3e50;
     
     .container{
-        padding: 20px;
+      padding: 20px;
     }
     .box{
-        border: 1px solid #333;
-    }
-    .head-title{
-      padding-right: 15px;
-      padding-left: 15px;
-      font-style: italic;
-      font-size: 14px;
+      border: 1px solid #333;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 10px;
     }
     button{
       width: 100%;
